@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/User/Desktop/Selenium_IntelliJ/Automation_ArtOfTesting_ECommerce/src/test/java/alltestngcodepackage/UingDependsOnMethods.java">
+        <classes>
+            <class name="alltestngcodepackage.UingDependsOnMethods">
+                <methods>
+                    <include name="logIn"/>
+                    <include name="openHomePage"/>
+                    <include name="addItemToCart"/>
+                    <include name="goToCart"/>
+                    <include name="buyItem"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

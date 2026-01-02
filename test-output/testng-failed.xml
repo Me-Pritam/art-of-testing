@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="C:/Users/User/Desktop/Selenium_IntelliJ/Automation_ArtOfTesting_ECommerce/src/test/java/alltestngcodepackage/RegisterUserUsingExistingEmailHardAssertion.java(failed)">
+    <classes>
+      <class name="alltestngcodepackage.RegisterUserUsingExistingEmailHardAssertion">
+        <methods>
+          <include name="loadConfiguration"/>
+          <include name="verifyHomePageVisibility"/>
+          <include name="doConfiguration"/>
+          <include name="verifyNewSignUpHeading"/>
+          <include name="enterNameAndExistingEmailAddress"/>
+          <include name="clickOnSignUpLogInLink"/>
+        </methods>
+      </class> <!-- alltestngcodepackage.RegisterUserUsingExistingEmailHardAssertion -->
+    </classes>
+  </test> <!-- C:/Users/User/Desktop/Selenium_IntelliJ/Automation_ArtOfTesting_ECommerce/src/test/java/alltestngcodepackage/RegisterUserUsingExistingEmailHardAssertion.java(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

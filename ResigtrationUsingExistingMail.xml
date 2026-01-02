@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/User/Desktop/Selenium_IntelliJ/Automation_ArtOfTesting_ECommerce/src/test/java/alltestngcodepackage/RegisterUserUsingExistingEmailHardAssertion.java">
+        <classes>
+            <class name="alltestngcodepackage.RegisterUserUsingExistingEmailHardAssertion">
+                <methods>
+                    <include name="verifyHomePageVisibility"/>
+                    <include name="clickOnSignUpLogInLink"/>
+                    <include name="verifyNewSignUpHeading"/>
+                    <include name="enterNameAndExistingEmailAddress"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -18,6 +18,10 @@ public class HomePagePOM
     @FindBy(xpath = "//div[@class='productinfo text-center']")
     private List<WebElement> allProducts;
 
+    @FindBy(xpath = "//div[@class='signup-form']/descendant::h2")
+    private WebElement newUserSignUpHeading;
+
+
 
     @FindBy(xpath = "//a[@data-product-id='13' and @class='btn btn-default add-to-cart']")
         private WebElement frozenTshirt;
@@ -71,6 +75,11 @@ public class HomePagePOM
         }
 
         throw new RuntimeException("Product '" + prodName + "' not found");
+    }
+
+    public WebElement getNewUserSignUpHeading()
+    {
+        return newUserSignUpHeading;
     }
 
 

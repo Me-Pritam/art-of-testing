@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="methods" thread-count="2">
+    <test verbose="2"  name="C:/Users/User/Desktop/Selenium_IntelliJ/Automation_ArtOfTesting_ECommerce/src/test/java/alltestngcodepackage/ParallelLogInUsingMethods.java">
+        <classes>
+            <class name="alltestngcodepackage.ParallelLogInUsingMethods">
+                <methods>
+                    <include name="validLogIn"/>
+                    <include name="inValidLogIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

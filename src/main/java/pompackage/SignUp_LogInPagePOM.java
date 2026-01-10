@@ -8,9 +8,15 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class SignUp_LogInPagePOM
 {
+    WebDriver driver;
+
     private static final Logger log = LogManager.getLogger(SignUp_LogInPagePOM.class);
     @FindBys({@FindBy(xpath = "//input[@data-qa='signup-name']"),@FindBy(xpath = "//input[@placeholder='Name']")})
     private WebElement signUpUserNameField;
@@ -33,6 +39,7 @@ public class SignUp_LogInPagePOM
 
     public SignUp_LogInPagePOM(WebDriver driver)
     {
+        this.driver = driver;
         PageFactory.initElements(driver,this);
     }
 
@@ -45,9 +52,10 @@ public class SignUp_LogInPagePOM
 
     public void performLogIn(String email,String password)
     {
-        logInEmailField.sendKeys(email);
-        logInPasswordField.sendKeys(password);
-        logInButton.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(logInEmailField)).sendKeys(email);
+        wait.until(ExpectedConditions.visibilityOf(logInPasswordField)).sendKeys(password);
+        wait.until(ExpectedConditions.elementToBeClickable(logInButton)).click();
     }
 
     public WebElement getSignUpUserNameField() {

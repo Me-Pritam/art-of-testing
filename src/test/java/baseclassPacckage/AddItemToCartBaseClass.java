@@ -60,14 +60,14 @@ public class AddItemToCartBaseClass
 
     }
 
-    @BeforeClass
+    @BeforeClass(enabled = false)
     public void doLogIn()
     {
         au.clickOnElement(navBar.getLogInSignUpLink());
         au.writeInElement(logInSignUp.getLogInEmailField(),user);
         au.writeInElement(logInSignUp.getLogInPasswordField(),password);
         au.clickOnElement(logInSignUp.getLogInButton());
-        
+
     }
 
 }

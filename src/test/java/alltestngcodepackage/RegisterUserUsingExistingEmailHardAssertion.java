@@ -2,6 +2,7 @@ package alltestngcodepackage;
 
 import baseclassPacckage.Registration_ExistingMailId_BaseClass;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -13,14 +14,18 @@ import java.time.Duration;
 public class RegisterUserUsingExistingEmailHardAssertion extends Registration_ExistingMailId_BaseClass
 {
     WebDriverWait wait;
+    WebDriver driver ;
+
 
 
     @Test
     public void verifyHomePageVisibility()
     {
-       String currentUrl  = driver.getCurrentUrl();
+        driver = wbu.getDriver();
 
-        Assert.assertNotEquals(currentUrl,url,"The HomePage url is different");
+        String currentUrl  = driver.getCurrentUrl();
+
+        Assert.assertEquals(currentUrl,url,"The HomePage url is different");
         Reporter.log("The HomePage is displyed",true);
     }
 

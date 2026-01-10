@@ -1,8 +1,7 @@
 package baseclassPacckage;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import pompackage.NavBarPom;
 import pompackage.SignUp_LogInPagePOM;
@@ -10,7 +9,7 @@ import utilitypackage.ActionUtility;
 import utilitypackage.GlobalConfiguration;
 import utilitypackage.WebBrowserUtility;
 
-public class Registration_ExistingMailId_BaseClass
+public class ParallelMethodBaseClass
 {
     public GlobalConfiguration gc;
     public WebBrowserUtility wbu;
@@ -25,34 +24,27 @@ public class Registration_ExistingMailId_BaseClass
     public NavBarPom nav;
 
 
-
-    @BeforeClass
-    public void loadConfiguration() throws Exception
+    @BeforeMethod
+    public void doConfiguration() throws Exception
     {
-       gc = new GlobalConfiguration();
-       browser = gc.getData("browser");
-       url = gc.getData("url");
-       user = gc.getData("user");
-       password = gc.getData("password");
-    }
+        gc = new GlobalConfiguration();
+        browser = gc.getData("browser");
+        url = gc.getData("url");
+        user = gc.getData("user");
+        password = gc.getData("password");
 
-    @BeforeClass(dependsOnMethods = "loadConfiguration")
-    public void doConfiguration()
-    {
         wbu = new WebBrowserUtility();
-        wbu.openBrowser(browser);
-        wbu.openUrl(url);
-        wbu.waitForElement(10);
 
+        wbu.openBrowser(browser);
+        //wbu.openUrl(url);
+
+        wbu.getDriver().get("https://automationexercise.com/");
+        wbu.waitForElement(10);
 
         au = new ActionUtility(wbu.getDriver());
 
+
         signUp = new SignUp_LogInPagePOM(wbu.getDriver());
         nav = new NavBarPom(wbu.getDriver());
-
     }
-
-
-
-
 }

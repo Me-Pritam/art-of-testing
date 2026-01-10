@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/User/Desktop/Selenium_IntelliJ/Automation_ArtOfTesting_ECommerce/src/test/java/alltestngcodepackage/Validating_VisibilityOfElement_SoftAssertion.java">
+        <classes>
+            <class name="alltestngcodepackage.Validating_VisibilityOfElement_SoftAssertion">
+                <methods>
+                    <include name="vrifyHomePage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

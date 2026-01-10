@@ -1,8 +1,6 @@
 package baseclassPacckage;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import pompackage.NavBarPom;
 import pompackage.SignUp_LogInPagePOM;
@@ -10,13 +8,13 @@ import utilitypackage.ActionUtility;
 import utilitypackage.GlobalConfiguration;
 import utilitypackage.WebBrowserUtility;
 
-public class Registration_ExistingMailId_BaseClass
+public class ParallelClassBaseClass
 {
     public GlobalConfiguration gc;
     public WebBrowserUtility wbu;
     public ActionUtility au;
 
-    public String browser;
+    public static String browser;
     public String url;
     public String user;
     public String password;
@@ -27,32 +25,28 @@ public class Registration_ExistingMailId_BaseClass
 
 
     @BeforeClass
-    public void loadConfiguration() throws Exception
+    public void doLogIn() throws Exception
     {
-       gc = new GlobalConfiguration();
-       browser = gc.getData("browser");
-       url = gc.getData("url");
-       user = gc.getData("user");
-       password = gc.getData("password");
-    }
+        gc = new GlobalConfiguration();
+        browser = gc.getData("browser");
+        url = gc.getData("url");
+        user = gc.getData("user");
+        password = gc.getData("password");
 
-    @BeforeClass(dependsOnMethods = "loadConfiguration")
-    public void doConfiguration()
-    {
         wbu = new WebBrowserUtility();
         wbu.openBrowser(browser);
         wbu.openUrl(url);
-        wbu.waitForElement(10);
-
-
-        au = new ActionUtility(wbu.getDriver());
-
+        wbu.waitForElement(15) ;
         signUp = new SignUp_LogInPagePOM(wbu.getDriver());
         nav = new NavBarPom(wbu.getDriver());
 
+        au = new ActionUtility(wbu.getDriver());
+
+        au.clickOnElement(nav.getLogInSignUpLink());
+        au.writeInElement(signUp.getLogInEmailField(),user);
+        au.writeInElement(signUp.getLogInPasswordField(),password);
+        au.clickOnElement(signUp.getLogInButton());
+
+
     }
-
-
-
-
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="classes" thread-count="2">
+    <test  name="C:/Users/User/Desktop/Selenium_IntelliJ/Automation_ArtOfTesting_ECommerce/src/test/java/alltestngcodepackage/AddItemToCartParllelClass2.java">
+        <classes>
+            <class name="alltestngcodepackage.AddItemToCartParllelClass2">
+                <methods>
+                    <include name="addItemToCart"/>
+                </methods>
+            </class>
+            <class name="alltestngcodepackage.AddItemToCartParalelClass1">
+                <methods>
+                    <include name="addItemToCart"/>
+                </methods>
+            </class>
+        </classes>
+</test>
+</suite>
